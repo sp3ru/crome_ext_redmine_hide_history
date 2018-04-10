@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+
+  "name": "redmine history hide",
+  "description": "скрыть мусор в истории тикета под спойлер, показывать только сообщения",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "ico.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "notifications",
+    "alarms",
+    "idle",
+    "http://hz-dev.stalker.so/"
+  ],
+
+
+
+"content_scripts": [
+    {
+      "matches": ["http://hz-dev.stalker.so/*"],
+      "css": ["redmine_history_hide.css"],
+      "js": ["1.12.4_jquery.min.js","redmine_history_hide.js"]
+    }
+  ]
+
+
+}
