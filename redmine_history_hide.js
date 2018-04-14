@@ -59,10 +59,20 @@ if (issue_history && issue_content) {
 	$(document).on('click','.spoiler-trigger',
 			function(e)
 			{
+				if($(this).parent().find('.spoiler-block').first().is(":visible"))
+				{
+					spoiler_link.innerHTML = "Вся история...";
+
+				}else
+				{
+					spoiler_link.innerHTML = "Только сообщения...";
+				}
+
 				e.preventDefault();
 				$(this).toggleClass('active');
-				$(this).parent().find('.spoiler-block').first().slideToggle(200);
+				$(this).parent().find('.spoiler-block').first().toggle("slide");
 				$(this).parent().find('.spoiler-invert-block').first().slideToggle(200);
+
 			}
 		);
 
